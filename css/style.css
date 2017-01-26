@@ -89,7 +89,7 @@ nav {
   justify-content: space-around;
 }
 
-#play, #submit {
+#play, #submit, #stop {
   text-align: center;
   height: 50px;
   width: 150px;
@@ -101,6 +101,10 @@ nav {
 
 #submit {
   background-color: blue;
+}
+
+#stop {
+  background-color: red;
 }
 
 #bpm {
