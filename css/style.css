@@ -51,11 +51,12 @@ nav {
   align-items: center;
   font-size: 36px;
   color: #808080;
+  transition: all .07s ease;
 }
 
 .key-select {
-  color: white;
-  background-color: orange;
+  color: #FFF;
+  background-color: #961e1e;
 }
 
 .active {
@@ -70,12 +71,13 @@ nav {
   height: 15px;
   background-color: #961e1e;
   border-radius: 50%;
+  transition: all .07s ease;
 }
 
 .lit {
-  width: 18px;
-  height: 18px;
+  transform: scale(1.1);
   background-color: red;
+  box-shadow: 0 0 5px red;
 }
 
 #controls {
@@ -138,4 +140,8 @@ input {
 
 #lose {
   color: red;
+}
+
+#overlay {
+  display: none;
 }
