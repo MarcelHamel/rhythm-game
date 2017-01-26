@@ -10,58 +10,60 @@
 
   </head>
   <body>
-
+    <nav>
+      <div id="title">Rhythm Game</div>
+      <div id="instructions">Instructions</div>
+      <div id="practice">Practice</div>
+    </nav>
     <div id="container">
       <div id="sequencer">
         <div class="seq-key" id="1">
-          <div class="count">1</div>
           <div class="light"></div>
-          <div class="key"></div>
+          <div class="key">1</div>
         </div>
         <div class="seq-key" id="1and">
-          <div class="count">&</div>
           <div class="light"></div>
-          <div class="key"></div>
+          <div class="key">&</div>
         </div>
         <div class="seq-key" id="2">
-          <div class="count">2</div>
           <div class="light"></div>
-          <div class="key"></div>
+          <div class="key">2</div>
         </div>
         <div class="seq-key" id="2and">
-          <div class="count">&</div>
           <div class="light"></div>
-          <div class="key"></div>
+          <div class="key">&</div>
         </div>
         <div class="seq-key" id="3">
-          <div class="count">3</div>
           <div class="light"></div>
-          <div class="key"></div>
+          <div class="key">3</div>
         </div>
         <div class="seq-key" id="3and">
-          <div class="count">&</div>
           <div class="light"></div>
-          <div class="key"></div>
+          <div class="key">&</div>
         </div>
         <div class="seq-key" id="4">
-          <div class="count">4</div>
           <div class="light"></div>
-          <div class="key"></div>
+          <div class="key">4</div>
         </div>
         <div class="seq-key" id="4and">
-          <div class="count">&</div>
           <div class="light"></div>
-          <div class="key"></div>
+          <div class="key">&</div>
         </div>
       </div> <!-- sequencer -->
 
       <div id="controls">
-        <button id="play"></button>
-        <button id="submit"></button>
+        <button id="play">PLAY</button>
+        <button id="submit">SUBMIT</button>
         <div id="bpm">
-          <input type="text"></input>BPM
+          <input type="text"></input> BPM
         </div>
       </div> <!-- control row -->
+
+      <div id="winlose">
+        <div class="outcome" id="win">CORRECT!</div>
+        <div class="outcome" id="lose">TRY AGAIN</div>
+        <div class="outcome" id="bad-input">Please enter a number!</div>
+      </div>
 
     </div> <!-- container -->
 

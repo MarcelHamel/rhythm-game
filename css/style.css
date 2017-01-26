@@ -1,6 +1,22 @@
+nav {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  background: black;
+  height: 100px;
+  color: white;
+  font-family: Times New Roman;
+  font-style: italic;
+  font-size: 36px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
 #container {
   max-width: 800px;
-  height: 100vh;
+  height: 500px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -9,12 +25,11 @@
   margin-top: 0;
   margin-bottom: 0;
   box-sizing: border-box;
-  /*align-items: center;*/
 }
 
 #sequencer {
   display: flex;
-  flex-direction: row wrap;
+  flex-direction: row;
   justify-content: space-around;
 }
 
@@ -23,27 +38,44 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 150px;
+  height: 100px;
 }
 
-.count {
-  font-size: 36px;
-  color: #808080;
-  font-style: italic;
-}
 .key {
   border: 2px solid black;
   width: 50px;
   height: 50px;
   border-radius: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  color: #808080;
+}
+
+.key-select {
+  color: white;
+  background-color: orange;
+}
+
+.active {
+  color: #ffaa02;
+  background: #0F0;
+  box-shadow: 0 0 5px #ffaa02;
 }
 
 .light {
   border: 1px solid black;
   width: 15px;
   height: 15px;
-  background-color: red;
+  background-color: #961e1e;
   border-radius: 50%;
+}
+
+.lit {
+  width: 18px;
+  height: 18px;
+  background-color: red;
 }
 
 #controls {
@@ -55,15 +87,17 @@
   justify-content: space-around;
 }
 
-#play {
+#play, #submit {
+  text-align: center;
   height: 50px;
-  width: 100px;
+  width: 150px;
+  color: white;
+}
+#play {
   background-color: green;
 }
 
 #submit {
-  height: 50px;
-  width: 100px;
   background-color: blue;
 }
 
@@ -71,9 +105,37 @@
   display: inline;
   margin: 0;
   box-sizing: border-box;
+  color: black;
 }
 
 input {
   height: 50px;
   width: 80px;
+  text-align: center;
+}
+
+#winlose {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: 1px solid black;
+  height: 100px;
+  margin-top: 30px;
+}
+
+.outcome {
+  display: none;
+  font-size: 48px;
+  font-family: Arial;
+  font-style: italic;
+  font-weight: bold;
+}
+
+#win {
+  color: green;
+}
+
+#lose {
+  color: red;
 }
