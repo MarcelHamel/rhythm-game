@@ -9,7 +9,20 @@ document.addEventListener('DOMContentLoaded', function(){
   const lights = document.querySelectorAll('.light');
 
   // Variables which check for game state and store user input
-  var playbackSequence = [[1,2],[],[1,2],[2],[1],[2],[1,2],[2]];
+  var rhythmBank = [
+    [[1,2],[],[1,2],[2],[1],[2],[1,2],[2]],
+    [[1,2],[2],[1,2],[],[1,2],[2],[1,2],[]],
+    [[1,2],[],[1,2],[],[1,2],[2],[1,2],[]],
+    [[1,2],[],[1],[2],[1,2],[],[1],[2]],
+    [[1,2],[2],[1,2],[],[1,2],[],[1,2],[2]],
+    [[1,2],[],[1],[],[1,2],[2],[1,2],[2]]
+  ];
+  var playbackSequence;
+  function setRhythm() {
+    var selection = Math.floor(Math.random() * rhythmBank.length);
+    playbackSequence = rhythmBank[selection];
+  };
+  setRhythm();
   var userSequence = [[1],[],[1],[],[1],[],[1],[]];
 
   // Check for victory conditions
@@ -23,13 +36,26 @@ document.addEventListener('DOMContentLoaded', function(){
         return;
       }
     }
-    document.querySelector('#win').style.display = 'initial';
-    setTimeout(function(){
-      document.querySelector('#win').style.display = 'none';
-    }, 1000);
+    document.querySelector('#win')
+    .classList
+    .add('inst-overlay');
   };
 
-
+  // "Play Again" button events
+  document.querySelector('#replay').addEventListener('click', function(){
+    // Select new "problem" rhythm
+    setRhythm();
+    // Remove victory overlay
+    document.querySelector('.inst-overlay')
+    .classList
+    .remove('inst-overlay');
+    // Reset sequencer
+    document.querySelectorAll('.key-select')
+    .forEach(function(i) {
+      i.classList.remove('key-select');
+      userSequence[i.dataset.index].pop();
+    })
+  })
 
 
   // Set tempo functionality
@@ -74,19 +100,18 @@ document.addEventListener('DOMContentLoaded', function(){
   };
 
   // Display 'Instructions' overlay
-  document.querySelector('#instructions')
+  document.querySelector('#instbutton')
   .addEventListener('click', function() {
-    document.querySelector('.overlay')
+    document.querySelector('#instructions')
     .classList
     .add('inst-overlay');
-  });
-
-  // Remove 'Instructions' overlay
-  document.querySelector('.overlay')
-  .addEventListener('click', function() {
-    document.querySelector('.overlay')
-    .classList
-    .remove('inst-overlay');
+    document.querySelector('.inst-overlay')
+    .addEventListener('click', function() {
+      // document.querySelector('.overlay')
+      this
+      .classList
+      .remove('inst-overlay');
+    });
   });
 
 

@@ -145,10 +145,6 @@ input {
   font-weight: bold;
 }
 
-#win {
-  color: green;
-}
-
 #lose {
   color: red;
 }
@@ -167,6 +163,7 @@ input {
 
 .inst-overlay {
 display: inline-flex;
+flex-direction: column;
 justify-content: center;
 align-items: center;
 position: fixed;
@@ -181,3 +178,27 @@ z-index: 1;
 p {
   font-size: 24px;
 }
+
+#play-again {
+  margin-top: 80px;
+  width: 500px;
+  display: flex;
+  justify-content: space-around;
+}
+
+#play-again button {
+  background: rgba(0,0,0,0.0);
+  border: 2px solid #FFF;
+  color: #FFF;
+  font-style: italic;
+  font-family: Times New Roman;
+  text-align: center;
+  border-radius: 5%;
+  width: 150px;
+  height: 50px;
+  font-size: 24px
+}
+
+ #inst-content {
+   max-width: 960px;
+ }

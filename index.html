@@ -12,7 +12,7 @@
   <body>
     <nav>
       <div id="title">Rhythm Game</div>
-      <div id="instructions">Instructions</div>
+      <div id="instbutton">Instructions</div>
     </nav>
     <div id="container">
       <div id="sequencer">
@@ -63,18 +63,26 @@
       </div> <!-- control row -->
 
       <div id="winlose">
-        <div class="outcome" id="win">CORRECT!</div>
+        <div class="overlay" id="win">
+          <h1>CORRECT!</h1>
+
+          <div id='play-again'>
+            <button id='replay'>Play Again</button>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><button id='quit'>Quit</button></a>
+          </div>
+
+        </div>
         <div class="outcome" id="lose">TRY AGAIN</div>
         <div class="outcome" id="bad-input">INVALID TEMPO</div>
       </div> <!-- Game State Display -->
 
-      <div class="overlay">
-        <div id="inst-text">
+      <div id="instructions" class="overlay">
+        <div id="inst-content">
           <h1>How To Play:</h1>
           <p>Welcome! In this game, you will be played a rhythm and asked to enter it
             on a corresponding set of sequencer keys. You can hear the rhythm as many
             times as you'd like.</p>
-            <p>Controls:</p>
+            <h1>Controls:<h1>
             <p>Play: Plays the rhythm the player is supposed to enter into the sequencer.</p>
             <p>Stop: Stops playback.</p>
             <p>Submit: Pressing this button will both play the rhythm that you've entered and
@@ -82,7 +90,7 @@
             <p>BPM Field: BPM stands for 'beats per minute', and is a measure of tempo (speed)
               in music. Enter a number between 0 and 399 and press 'Enter' to adjust playback
               speed.</p>
-        </div>
+            </div>
       </div>
 
       <audio src="audio/click.wav" data-note="1"></audio>
