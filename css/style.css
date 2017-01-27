@@ -33,14 +33,6 @@ nav {
   justify-content: space-around;
 }
 
-.seq-group {
-  display: inline-flex;
-  box-sizing: border-box;
-  justify-content: space-around;
-  width: 50%;
-  min-width: 300px;
-}
-
 .seq-key {
   display: inline-flex;
   flex-direction: column;
@@ -111,10 +103,6 @@ nav {
   font-weight: bold;
 }
 
-#bpm {
-  min-width: 150px;
-}
-
 #play {
   background-color: #1e9696;
 }
@@ -132,6 +120,7 @@ nav {
   margin: 0;
   box-sizing: border-box;
   color: black;
+  min-width: 150px;
 }
 
 input {
