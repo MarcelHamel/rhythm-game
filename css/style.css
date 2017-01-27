@@ -243,6 +243,7 @@ p {
 
   #bpm {
     padding-top: 5px;
+    display: none;
   }
 
   #controls {
@@ -251,5 +252,6 @@ p {
 
   input {
     height: 30px;
+    width: 40px;
   }
  }
