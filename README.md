@@ -26,3 +26,9 @@ lot of the concepts (but less code than expected) were borrowed to create this g
 
 The one place where I directly copied the original tutorial's code was in the 'transitioned'
 events that end animations. It was simply written better than I could manage on my own...
+
+# I GOT PROBLEMS
+
+In the tempo event listener, I couldn't figure out how to get it to stop accepting strings
+and glitching out. Rather than do it the right way, I just limited the upper range of acceptable
+tempos to something very boring human could pull off.

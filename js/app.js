@@ -12,10 +12,30 @@ document.addEventListener('DOMContentLoaded', function(){
   var playbackSequence = [[1,2],[],[1,2],[2],[1],[2],[1,2],[2]];
   var userSequence = [[1],[],[1],[],[1],[],[1],[]];
 
+  // Check for victory conditions
+  var checkWin = function() {
+    for(i = 0; i < userSequence.length; i++) {
+      if(userSequence[i].includes(2) !== playbackSequence[i].includes(2)) {
+        document.querySelector('#lose').style.display = 'initial';
+        setTimeout(function(){
+          document.querySelector('#lose').style.display = 'none';
+        }, 1000);
+        return;
+      }
+    }
+    document.querySelector('#win').style.display = 'initial';
+    setTimeout(function(){
+      document.querySelector('#win').style.display = 'none';
+    }, 1000);
+  };
+
+
+
+
   // Set tempo functionality
   var bpm = 312
   var newTempo = function(input) {
-    var interval = inputField.value;
+    // var interval = inputField.value;
     bpm = 60000 / (input * 2);
   }
 
@@ -53,6 +73,23 @@ document.addEventListener('DOMContentLoaded', function(){
       }, bpm);
   };
 
+  // Display 'Instructions' overlay
+  document.querySelector('#instructions')
+  .addEventListener('click', function() {
+    document.querySelector('.overlay')
+    .classList
+    .add('inst-overlay');
+  });
+
+  // Remove 'Instructions' overlay
+  document.querySelector('.overlay')
+  .addEventListener('click', function() {
+    document.querySelector('.overlay')
+    .classList
+    .remove('inst-overlay');
+  });
+
+
   //Sequence Key event listener
   keys.forEach(function(key) {
     key.addEventListener('click', function(){
@@ -84,17 +121,29 @@ document.addEventListener('DOMContentLoaded', function(){
     if (loopPlaying) return;
     playSequence(userSequence);
     loopPlaying = true;
-  })
+    var intTime = bpm * 8;
+    setTimeout(function(){
+      checkWin();
+      clearInterval(intervalID);
+      loopPlaying = false;
+    }, intTime);
+  });
 
   // Tempo event listener
   inputField.addEventListener('keypress', function(e) {
-    if (e.which === 13) {
-      if (inputField.value !== NaN) {
-        newTempo(inputField.value);
-        } else {
-          document.querySelector('#bad-input').style.display = 'initial'
-        }
-    }});
+    if (e.which === 13 && parseInt(inputField.value) < 400) {
+      newTempo(inputField.value);
+   }
+   if (parseInt(inputField.value) > 399) {
+     document.querySelector('#bad-input').style.display = 'initial';
+     setTimeout(function(){
+       document.querySelector('#bad-input').style.display = 'none';
+     }, 1000);
+   }
+    });
+
+
+
 
 
 });

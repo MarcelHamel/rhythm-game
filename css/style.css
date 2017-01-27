@@ -89,7 +89,10 @@ nav {
   justify-content: space-around;
 }
 
-#play, #submit, #stop {
+#play,
+#submit,
+#stop,
+#tempobutton {
   text-align: center;
   height: 50px;
   width: 150px;
@@ -105,6 +108,10 @@ nav {
 
 #stop {
   background-color: red;
+}
+
+#tempobutton {
+  background-color: yellow;
 }
 
 #bpm {
@@ -146,6 +153,31 @@ input {
   color: red;
 }
 
-#overlay {
+#bad-input {
+  color: black;
+}
+
+.overlay {
   display: none;
+  color: #FFF;
+  font-style: italic;
+  font-family: Times New Roman;
+  text-align: center;
+}
+
+.inst-overlay {
+display: inline-flex;
+justify-content: center;
+align-items: center;
+position: fixed;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+background: rgba(0,0,0,0.90);
+z-index: 1;
+}
+
+p {
+  font-size: 24px;
 }
