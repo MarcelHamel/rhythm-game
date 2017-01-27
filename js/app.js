@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function(){
   const inputField = document.querySelector('input');
   const keys = document.querySelectorAll('.key');
   const lights = document.querySelectorAll('.light');
+  const lose = document.querySelector('#lose');
+  const badInput = document.querySelector('#badinput');
 
   // Variables which check for game state and store user input
   var rhythmBank = [
@@ -29,9 +31,9 @@ document.addEventListener('DOMContentLoaded', function(){
   var checkWin = function() {
     for(i = 0; i < userSequence.length; i++) {
       if(userSequence[i].includes(2) !== playbackSequence[i].includes(2)) {
-        document.querySelector('#lose').style.display = 'initial';
+        lose.style.display = 'initial';
         setTimeout(function(){
-          document.querySelector('#lose').style.display = 'none';
+          lose.style.display = 'none';
         }, 1000);
         return;
       }
@@ -156,13 +158,13 @@ document.addEventListener('DOMContentLoaded', function(){
 
   // Tempo event listener
   inputField.addEventListener('keypress', function(e) {
-    if (e.which === 13 && parseInt(inputField.value) < 400) {
+    if (e.which === 13 && parseInt(inputField.value) < 401 && parseInt(inputField.value) > 39)  {
       newTempo(inputField.value);
    }
    if (parseInt(inputField.value) > 399) {
-     document.querySelector('#bad-input').style.display = 'initial';
+     badInput.style.display = 'initial';
      setTimeout(function(){
-       document.querySelector('#bad-input').style.display = 'none';
+       badInput.style.display = 'none';
      }, 1000);
    }
     });
