@@ -224,11 +224,24 @@ p {
  @media (max-width: 500px) {
    #controls {
      flex-direction: column;
-     /*align-content: space-around;*/
    }
 
   .res-row {
     width: 100%;
+    /*margin-top: 20px;*/
+  }
+
+  nav {
+    height: 50px;
+    font-size: 18px;
+  }
+
+  #play,
+  #submit {
+    margin-bottom: 10px;
+  }
+
+  #controls {
     margin-top: 20px;
   }
 
