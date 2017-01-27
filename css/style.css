@@ -96,18 +96,23 @@ nav {
   text-align: center;
   height: 50px;
   width: 150px;
-  color: white;
+  border: 2px solid #000;
+  font-family: Times New Roman;
+  font-style: italic;
+  font-size: 24px;
+  font-weight: bold;
 }
+
 #play {
-  background-color: green;
+  background-color: #1e9696;
 }
 
 #submit {
-  background-color: blue;
+  background-color: #5a961e;
 }
 
 #stop {
-  background-color: red;
+  background-color: #5a1e96;
 }
 
 #tempobutton {
@@ -132,7 +137,7 @@ input {
   justify-content: center;
   align-items: center;
   width: 100%;
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   height: 100px;
   margin-top: 30px;
 }
