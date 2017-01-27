@@ -12,12 +12,12 @@ document.addEventListener('DOMContentLoaded', function(){
 
   // Variables which check for game state and store user input
   var rhythmBank = [
-    [[1,2],[],[1,2],[2],[1],[2],[1,2],[2]],
-    [[1,2],[2],[1,2],[],[1,2],[2],[1,2],[]],
-    [[1,2],[],[1,2],[],[1,2],[2],[1,2],[]],
-    [[1,2],[],[1],[2],[1,2],[],[1],[2]],
-    [[1,2],[2],[1,2],[],[1,2],[],[1,2],[2]],
-    [[1,2],[],[1],[],[1,2],[2],[1,2],[2]]
+    [[2],[],[2],[2],[],[2],[2],[2]],
+    [[2],[2],[2],[],[2],[2],[2],[]],
+    [[2],[],[2],[],[2],[2],[2],[]],
+    [[2],[],[],[2],[2],[],[],[2]],
+    [[2],[2],[2],[],[2],[],[2],[2]],
+    [[2],[],[],[],[2],[2],[2],[2]]
   ];
   var playbackSequence;
   function setRhythm() {
@@ -25,12 +25,12 @@ document.addEventListener('DOMContentLoaded', function(){
     playbackSequence = rhythmBank[selection];
   };
   setRhythm();
-  var userSequence = [[1],[],[1],[],[1],[],[1],[]];
+  var userSequence = [[],[],[],[],[],[],[],[]];
 
   // Check for victory conditions
   var checkWin = function() {
     for(i = 0; i < userSequence.length; i++) {
-      if(userSequence[i].includes(2) !== playbackSequence[i].includes(2)) {
+      if(userSequence[i].length !== playbackSequence[i].length) {
         lose.style.display = 'initial';
         setTimeout(function(){
           lose.style.display = 'none';
@@ -77,11 +77,9 @@ document.addEventListener('DOMContentLoaded', function(){
   keys.forEach(key => key.addEventListener('transitionend', removeTransition));
   lights.forEach(light => light.addEventListener('transitionend', removeTransition));
 
-  // Playback functionality...
-  // MDN suggests this to clear timeout intervals from other functions. Not sure why. ASK.
-  var intervalID;
 
   // Actual playback function
+  var intervalID;
   var playSequence = function(rhythm) {
     var seqPos = 0;
       intervalID = setInterval(function(){
@@ -144,17 +142,7 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 
   // Submit button event listener
-  submitButton.addEventListener('click', function() {
-    if (loopPlaying) return;
-    playSequence(userSequence);
-    loopPlaying = true;
-    var intTime = bpm * 8;
-    setTimeout(function(){
-      checkWin();
-      clearInterval(intervalID);
-      loopPlaying = false;
-    }, intTime);
-  });
+  submitButton.addEventListener('click', checkWin);
 
   // Tempo event listener
   inputField.addEventListener('keypress', function(e) {
