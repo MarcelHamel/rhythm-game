@@ -29,8 +29,16 @@ nav {
 
 #sequencer {
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   justify-content: space-around;
+}
+
+.seq-group {
+  display: inline-flex;
+  box-sizing: border-box;
+  justify-content: space-around;
+  width: 50%;
+  min-width: 300px;
 }
 
 .seq-key {
@@ -92,7 +100,7 @@ nav {
 #play,
 #submit,
 #stop,
-#tempobutton {
+#bpm {
   text-align: center;
   height: 50px;
   width: 150px;
@@ -101,6 +109,10 @@ nav {
   font-style: italic;
   font-size: 24px;
   font-weight: bold;
+}
+
+#bpm {
+  min-width: 150px;
 }
 
 #play {
@@ -115,10 +127,6 @@ nav {
   background-color: #5a1e96;
 }
 
-#tempobutton {
-  background-color: yellow;
-}
-
 #bpm {
   display: inline;
   margin: 0;
@@ -127,7 +135,7 @@ nav {
 }
 
 input {
-  height: 50px;
+  height: 40px;
   width: 80px;
   text-align: center;
 }
@@ -137,7 +145,6 @@ input {
   justify-content: center;
   align-items: center;
   width: 100%;
-  /*border: 1px solid black;*/
   height: 100px;
   margin-top: 30px;
 }
