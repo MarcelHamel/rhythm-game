@@ -41,6 +41,8 @@ document.addEventListener('DOMContentLoaded', function(){
     document.querySelector('#win')
     .classList
     .add('inst-overlay');
+    clearInterval(intervalID);
+    loopPlaying = false;
   };
 
   // "Play Again" button events
@@ -115,15 +117,15 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 
 
-  //Sequence Key event listener
-  keys.forEach(function(key) {
-    key.addEventListener('click', function(){
-      this.classList.toggle('key-select');
-      var i = parseInt(this.dataset.index);
-      userSequence[i].includes(2) ? userSequence[i].pop()
-                                  : userSequence[i].push(2);
-      console.log(userSequence);
-    });
+  // //Sequence Key event listener w/ event delegation
+  document.querySelector('#sequencer').addEventListener('click', function(e) {
+    if (e.target && e.target.matches('div.key')) {
+      e.target.classList.toggle('key-select');
+          var i = parseInt(e.target.dataset.index);
+          userSequence[i].includes(2) ? userSequence[i].pop()
+                                      : userSequence[i].push(2);
+          console.log(userSequence);
+    }
   });
 
   // Play button event listener

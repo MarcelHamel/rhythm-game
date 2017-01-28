@@ -1,3 +1,4 @@
+/*Nav styling*/
 nav {
   width: 100%;
   margin-left: 0;
@@ -13,6 +14,8 @@ nav {
   align-items: center;
   justify-content: space-around;
 }
+
+/*Page layout and containers*/
 
 #container {
   max-width: 800px;
@@ -33,6 +36,12 @@ nav {
   justify-content: space-around;
 }
 
+.res-row {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+}
+
 .seq-key {
   display: inline-flex;
   flex-direction: column;
@@ -40,6 +49,8 @@ nav {
   align-items: center;
   height: 100px;
 }
+
+/*Sequencer styling*/
 
 .key {
   border: 2px solid black;
@@ -58,6 +69,7 @@ nav {
   color: #FFF;
   background-color: #961e1e;
 }
+
 
 .active {
   color: #ffaa02;
@@ -79,6 +91,8 @@ nav {
   background-color: red;
   box-shadow: 0 0 5px red;
 }
+
+/*Playback controls*/
 
 #controls {
   display: flex;
@@ -129,7 +143,9 @@ input {
   text-align: center;
 }
 
-#winlose {
+/*Loss/Error Display*/
+
+#error-loss {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -153,6 +169,8 @@ input {
 #bad-input {
   color: black;
 }
+
+/*Instruction and Victory Overlays*/
 
 .overlay {
   display: none;
@@ -204,11 +222,7 @@ p {
    max-width: 960px;
  }
 
-  .res-row {
-    display: flex;
-    justify-content: space-around;
-    width: 50%;
-  }
+/*Media queries... optimized for desktop browsers only*/
 
  @media (max-width: 500px) {
    #controls {
@@ -217,7 +231,6 @@ p {
 
   .res-row {
     width: 100%;
-    /*margin-top: 20px;*/
   }
 
   nav {
