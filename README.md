@@ -33,21 +33,22 @@ If a player succeeds in matching the computer's sequence, an overlay screen appe
 
 #User Stories
 A player should be able to:
--Play and Pause an audio sequence
--Enter their sequence on a grid of keys displayed on screen
--Check to see if their answer was right
--Adjust playback speed
--Reset the sequence and play again if they win
--Quit the game and go do something else
+
+* Play and Pause an audio sequence
+* Enter their sequence on a grid of keys displayed on screen
+* Check to see if their answer was right
+* Adjust playback speed
+* Reset the sequence and play again if they win
+* Quit the game and go do something else
 
 #Wireframe
 ![Baby's First Wireframe](wireframe.jpg)
 
 #Unsolved Problems
--JS didn't (doesn't?) execute in Safari
--Input field display is a little strange on mobile
--Game can be expanded to include:
-  -Randomized rhythmic phrases
-  -Scalable difficulty (16th notes phrases, multi-bar phrases, multiple sample tracks)
-  -"Practice Mode" (Just go play with a drum sequencer... its already built, after all.
--The UI could be styled so much better...
+* JS didn't (doesn't?) execute in Safari
+* Input field display is a little strange on mobile
+* Game can be expanded to include:
+  * Randomized rhythmic phrases
+  * Scalable difficulty (16th notes phrases, multi-bar phrases, multiple sample tracks)
+  * "Practice Mode" (Just go play with a drum sequencer... its already built, after all.
+* The UI could be styled so much better...
